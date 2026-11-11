@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Raw downloads are rebuilt by the ingest scripts, not committed
+data/raw/*
+!data/raw/.gitkeep
+
+# Local DuckDB warehouse
+*.duckdb
+*.duckdb.wal
+
+# dbt
+transform/target/
+transform/logs/
+transform/dbt_packages/
+transform/.user.yml
+
+# OS / editor
+.DS_Store
+.env

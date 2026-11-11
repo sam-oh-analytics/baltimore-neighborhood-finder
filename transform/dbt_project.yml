@@ -1,0 +1,20 @@
+name: baltimore_neighborhoods
+version: "0.1.0"
+config-version: 2
+profile: baltimore_neighborhoods
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+models:
+  baltimore_neighborhoods:
+    # staging: one model per source table, rename and cast only
+    staging:
+      +materialized: view
+    # intermediate: joins and spatial logic, not exposed to reports
+    intermediate:
+      +materialized: view
+    # marts: final tables read by the HTML page and Power BI
+    marts:
+      +materialized: table

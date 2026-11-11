@@ -1,0 +1,11 @@
+# Committed on purpose: DuckDB is a local file with no credentials,
+# so anyone who clones the repo can run dbt without extra setup.
+baltimore_neighborhoods:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/neighborhoods.duckdb
+      extensions:
+        - spatial
+      threads: 4
